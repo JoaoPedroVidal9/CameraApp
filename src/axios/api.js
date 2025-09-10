@@ -31,3 +31,7 @@ export const createEvento = async (form, imageUri) => {
     },
   });
 };
+
+export const getEventos = async () => {
+  return api.get("/evento"); // já retorna todos os eventos
+};

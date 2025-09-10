@@ -16,10 +16,10 @@ const HomeScreen = () => {
     try {
       // Faz a requisição para a api
       const response = await api.toggleLed({ value: `${!ledState.value}` });
-      setLedState({value:!ledState.value});
+      setLedState({ value: !ledState.value });
       console.log("Resposta:", response);
     } catch (error) {
-        console.log("Error:" , error.response.data);
+      console.log("Error:", error.response.data);
     }
   }
 
@@ -33,6 +33,9 @@ const HomeScreen = () => {
         onPress={ledToggle}
         color={ledState.value ? "red" : "green"}
       />
+      <View>
+        <Button title="Listar Eventos" onPress={() => navigation.navigate("EventosList")} color="blue" />
+      </View>
     </View>
   );
 };
